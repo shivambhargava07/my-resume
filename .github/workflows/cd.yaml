@@ -1,0 +1,33 @@
+name: CD
+
+on:
+    push:
+        branches: [ master ]
+        paths:
+            - 'src/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: azure/login@v1
+      with:
+          creds: ${{ secrets.AZURE_SP_SHIVAM_RESUME }}
+
+    - name: Upload to blob storage
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
+            az storage blob upload-batch --account-name shivamresumefrontend --auth-mode key -d '$web' -s src/
+    - name: Purge CDN endpoint
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
+           az cdn endpoint purge --content-paths  "/*" --profile-name "shivamresume" --name "shivamresume" --resource-group "my-resume"
+
+  # Azure logout
+    - name: logout
+      run: |
+            az logout
+      if: always()
