@@ -10,7 +10,7 @@ This project is about my resume having below details
 
 ## Architecture Diagram
 
-![alt text](resume-workflow.png)
+![alt text](ShivamBhargavaResumeArchDiagram.png)
 
 ## Setup CI/CD
 
@@ -34,7 +34,7 @@ https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-static-site-
 
 ## TODO
 
-1. Follow ci folder to see how deployment workflow is trigger when code is checked-in to master branch
-2. Integrate feature like (Total Profile Visitors info, Download CV option, etc..) (possible next month)
-3. Update pipeline/architecture diagram
+1. Integrate feature like (Total Profile Visitors info, Download CV option, etc..) (possible next month)
+2. Update pipeline/architecture diagram
 (possible next month)
+3. Make content pluggable from SQL DB in future
