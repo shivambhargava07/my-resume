@@ -10,7 +10,7 @@ This project is about my resume having below details
 
 ## Architecture Diagram
 
-![alt text](ShivamBhargavaResumeArchDiagram.png)
+![alt text](cloudresume.jpg)
 
 ## Setup CI/CD
 
